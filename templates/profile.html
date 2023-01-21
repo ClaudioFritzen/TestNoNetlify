@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profile</title>
+  <style>
+    .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .row {
+        display: flex;
+    }
+    .column {
+        flex: 1;
+        margin: 10px;
+    }
+    img {
+        width: 200px;
+    }
+    body{
+        background-color: #999999;
+    }
+  </style>
+</head>
+<body>
+  <div class="center">
+    <div class="row">
+      <div class="column">
+        <img src="{{ person.photo.url }}" alt="{{ person.name }}">
+        <br>
+        <a href="{% url 'update_profile' person.id %}">Update Profile</a>
+      </div>
+      <div class="column">
+        <h1>{{ person.name }}</h1>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
