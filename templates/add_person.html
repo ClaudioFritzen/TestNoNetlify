@@ -9,15 +9,17 @@
     <body>
     <div class="center">
         <form method="post" enctype="multipart/form-data">
+        {% messages %}
         {% csrf_token %}
+        {{ form.as_p }}
         <label>Name:</label>
         <input type="text" name="name" required>
         <br>
         <label>Photo:</label>
         <input type="file" name="photo" required>
         <br><br>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Add Person">
         </form>
     </div>
     </body>
-    </html>
+    
