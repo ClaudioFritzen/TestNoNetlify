@@ -1,41 +1,23 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
   <title>Profile</title>
-  <style>
-    .center {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .row {
-        display: flex;
-    }
-    .column {
-        flex: 1;
-        margin: 10px;
-    }
-    img {
-        width: 200px;
-    }
-    body{
-        background-color: #999999;
-    }
-  </style>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}">
 </head>
 <body>
-  <div class="center">
-    <div class="row">
-      <div class="column">
+    <nav>
+        <div class="nav-right">
+            <a href="#">Opção 1</a>
+            <a href="#">Opção 2</a>
+            <a href="#">Opção 3</a>
+        </div>
+    </nav>
+    <div class="container">
         <img src="{{ person.photo.url }}" alt="{{ person.name }}">
-        <br>
-        <a href="{% url 'update_profile' person.id %}">Update Profile</a>
-      </div>
-      <div class="column">
         <h1>{{ person.name }}</h1>
-      </div>
     </div>
-  </div>
 </body>
 </html>
 
